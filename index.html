@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>EW Auction — App</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+body{margin:0;padding:16px;font-family:system-ui,Segoe UI,Roboto,Arial}
+h1{font-size:18px;margin:0 0 8px}
+.card{border:1px solid #ddd;border-radius:14px;padding:12px;margin:8px 0}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+input[type=number]{padding:8px;border:1px solid #ccc;border-radius:10px;width:120px}
+button{padding:10px 14px;border:0;border-radius:12px;cursor:pointer}
+.muted{color:#666;font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.full{grid-column:1/-1}
+</style>
+</head>
+<body>
+<h1>EW Auction — Мини‑приложение</h1>
+<div id="lot" class="muted">Загрузка параметров...</div>
+
+
+<div class="card">
+<div class="row">
+<button id="b50">+50</button>
+<button id="b100">+100</button>
+<button id="b500">+500</button>
+<button id="b1000">+1000</button>
+</div>
+<div class="row" style="margin-top:8px">
+<input id="custom" type="number" placeholder="Своя сумма" />
+<button id="bcustom">Сделать ставку</button>
+</div>
+<div class="muted" style="margin-top:6px">Ставка отправляется боту. Сообщение в чате обновится автоматически.</div>
+</div>
+
+
+<div class="card">
+<div class="row full"><b>Авторизация по ReManga</b></div>
+<div class="row full">
+<input id="profile" placeholder="https://remanga.org/user/ID/about" style="flex:1;padding:8px;border:1px solid #ccc;border-radius:10px" />
+<button id="auth">Отправить</button>
+</div>
+<div class="muted">Мы проверим, что это твой профиль (ищем @username или код). Это нужно, чтобы привязывать ⚡ корректно.</div>
+</div>
+
+
+<div class="muted">Подписано: <span id="who">—</span></div>
+<script src="app.js"></script>
+</body>
+</html>
